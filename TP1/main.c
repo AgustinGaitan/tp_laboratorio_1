@@ -20,6 +20,7 @@ int main()
     int respuesta;
     int flagPrimerOperando = 0;
     int flagSegundoOperando = 0;
+    int flagMostrarResultados = 0;
 
         printf("**Agustin Gaitan 1A**");
     do
@@ -64,46 +65,66 @@ int main()
                 flagSegundoOperando = 1;
                     break;
             case 3:
-                suma = sumar(a,b);
-                resta = restar(a,b);
-                division = dividir(a,b);
-                multiplicacion = multiplicar(a,b);
-                factorialA = factorial(a);
-                factorialB = factorial(b);
-                printf("\nLas operaciones han sido realizadas.\nPresione cualquier tecla para continuar.\n\n");
-                getch();
-                   break;
-
-            case 4:
-                printf("\n********Resultados********\n\n");
-                mostarSuma(a, b, suma);
-                mostrarResta(a, b, resta);
-                if( b == 0)
-                    {
-                       printf("\n\nNo se puede dividir por cero.");
-                    }
-                    else
-                    {
-                            mostrarDivision(a, b, division);
-                    }
-                mostrarMultiplicacion(a, b, multiplicacion);
-                if(b<0 || a<0)
+                if(flagPrimerOperando && flagSegundoOperando)
                 {
-                     printf("\n\nNo se puede calcular el factorial de un numero negativo.\nRepita e ingrese uno positivo.\n\n");
-                }
-                else if (a>12)
-                {
-                    printf("\n\nError. Ingrese un primer operando menor.\n\n");
-                }
-                else if (b>12)
-                {
-                    printf("\n\nError. Ingrese un segundo operando menor.\n\n");
+                    suma = sumar(a,b);
+                    resta = restar(a,b);
+                    division = dividir(a,b);
+                    multiplicacion = multiplicar(a,b);
+                    factorialA = factorial(a);
+                    factorialB = factorial(b);
+                    flagMostrarResultados = 1;
+                    printf("\nLas operaciones han sido realizadas.\n\n");
+                    system("pause");
                 }
                 else
                 {
-                    mostrarFactorial(a, factorialA, b, factorialB);
+                    printf("\nNo ingreso algun operando.\n");
+                    system("pause");
+
                 }
-                system("pause");
+                   break;
+
+            case 4:
+                if(flagPrimerOperando && flagPrimerOperando && flagMostrarResultados)
+                {
+
+
+                    printf("\n********Resultados********\n\n");
+                    mostarSuma(a, b, suma);
+                    mostrarResta(a, b, resta);
+                    if( b == 0)
+                        {
+                           printf("\n\nNo se puede dividir por cero.");
+                        }
+                        else
+                        {
+                                mostrarDivision(a, b, division);
+                        }
+                    mostrarMultiplicacion(a, b, multiplicacion);
+                    if(b<0 || a<0)
+                    {
+                         printf("\n\nNo se puede calcular el factorial de un numero negativo.\nRepita e ingrese uno positivo.\n\n");
+                    }
+                    else if (a>12)
+                    {
+                        printf("\n\nError. Ingrese un primer operando menor.\n\n");
+                    }
+                    else if (b>12)
+                    {
+                        printf("\n\nError. Ingrese un segundo operando menor.\n\n");
+                    }
+                    else
+                    {
+                        mostrarFactorial(a, factorialA, b, factorialB);
+                    }
+                    system("pause");
+                }
+                else
+                {
+                    printf("\nError.No ingreso algun operando o no realizo las operaciones.\n\n");
+                    system("pause");
+                }
                     break;
 
         }
