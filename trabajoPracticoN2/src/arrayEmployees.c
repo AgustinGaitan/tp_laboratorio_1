@@ -348,7 +348,7 @@ int modificarEmpleado(Employee* list, int len, int id)
 
 					nuevoEmpleado.id = list[indice].id;
 					nuevoEmpleado.isEmpty = list[indice].isEmpty;
-					//list[indice] = nuevoEmpleado;
+
 					retorno = 0;
 				}
 			}
