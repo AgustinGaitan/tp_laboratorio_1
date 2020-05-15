@@ -28,7 +28,7 @@ int main()
 	int proximoId = 999;
 	int flag = 1;
 
-	initEmployees(lista, TAM);
+	initEmployees(lista, TAM); //recorre el array para isEmpty == 1;
 
 
 	do
@@ -39,8 +39,10 @@ int main()
 				case 1:            //ALTA DE EMPLEADOS
 
 					proximoId++;
+					if(proximoId > 999 && proximoId <= 2000)
+					{
 					altaEmpleado(lista,TAM, proximoId);
-
+					}
 
 					flag = 0; //una vez que se ingresa un empleado, flag cambia a 0, permitiendo ingresar a las opciones 2,3 y 4.
 
