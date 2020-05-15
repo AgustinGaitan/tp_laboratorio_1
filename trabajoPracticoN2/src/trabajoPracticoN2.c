@@ -33,7 +33,7 @@ int main()
 
 	do
 	{
-			//ACORDASE HACER LAS FLAGS.
+
 			switch(menu())
 			{
 				case 1:            //ALTA DE EMPLEADOS

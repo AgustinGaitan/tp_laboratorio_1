@@ -91,7 +91,7 @@ int addEmployee(Employee* list, int len, int id, char name[], char lastName[], f
 	int indice = buscarEspacio(list,len);
 	Employee auxEmpleado;
 
-		if(indice == -1 && list == NULL) //ya que no existen indices negativos, si es mayor a 0 entra en el else y copia los nombres ingresados al auxiliar
+		if(indice == -1 && list == NULL) //ya que no existen indices negativos, si es distinto de -1 entra en el else y copia los nombres ingresados al auxiliar
 		{
 			printf("No hay lugar en el sistema.\n");
 		}
@@ -113,7 +113,7 @@ int addEmployee(Employee* list, int len, int id, char name[], char lastName[], f
 	return retorno;
 }
 
-void printEmployee(Employee list)
+void printEmployee(Employee list) //muestra un solo empleado
 {
 
 	printf("%d        %-10s         %-10s         %2.f         %5d\n", list.id, list.name, list.lastName, list.salary, list.sector);
@@ -152,7 +152,7 @@ int printEmployees(Employee* list, int len)
 	{
 		if(list[i].isEmpty == 0)
 		{
-			printEmployee(list[i]);
+			printEmployee(list[i]); //muestra a los empleados cargados en el indice i
 			printf("\n\n");
 			retorno = 0;
 		}
@@ -228,7 +228,7 @@ void salarios(Employee* list, int len)
 	int contadorEmpleadosMayorPromedio = 0;
 
 
-	for(int i = 0 ; i< len; i++)
+	for(int i = 0 ; i< len; i++)  //recorre el array en busca de isEmpty == 0,  acumula los salarios y cuenta los empleados.
 	{
 
 		if(list[i].isEmpty == 0)
@@ -239,9 +239,9 @@ void salarios(Employee* list, int len)
 	}
 
 
-	promedioSalarios =  totalSalarios/ (float) contadorEmpleados ;
+	promedioSalarios =  totalSalarios/ (float) contadorEmpleados ; //promedio de salarios
 
-	for(int i = 0; i < len; i++)
+	for(int i = 0; i < len; i++) //recorre el array en busca de isEmpty == 0, y si el salario de alguno de los empleados es mayor al promedio, el contador aumenta 1.
 	{
 		if(list[i].isEmpty==0)
 		{
@@ -302,7 +302,7 @@ int modificarEmpleado(Employee* list, int len, int id)
 			{
 				printf("\nNo se encontro al empleado que quizo buscar\n");
 			}
-			else if (indice >= 0 && list[indice].isEmpty == 0)
+			else if (indice >= 0 && list[indice].isEmpty == 0) //se cambian los nombres por los nuevos modificados siempre y cuando el usuario ingrese 's'
 			{
 				printf("El nombre del empleado con ese ID es: %s\n", list[indice].name);
 				printf("El apellido del empleado con ese ID es: %s\n", list[indice].lastName);
@@ -359,7 +359,7 @@ void bajaEmpleadoCarga(Employee* list, int len)
 int removeEmployee(Employee* list, int len, int id)
 {
 	int retorno = -1;
-	int indice = findEmployeeById(list,len,id);
+	int indice = findEmployeeById(list,len,id); //busca el empleado
 	char confirma;
 
 				if(indice == -1 && list == NULL)
