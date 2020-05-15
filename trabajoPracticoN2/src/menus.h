@@ -21,9 +21,13 @@
 int menu();
 
 
+/**\brief submenu de modificacion
+ *
+ *
+ * @return la opcion ingresada por el usuario
+ */
 
-
-
+int menuModificar();
 
 
 

@@ -37,3 +37,28 @@ int menu()
 
 
 
+int menuModificar()
+{
+
+	int opcion;
+
+		system("cls");
+
+		printf("***** Menu de modificacion *****\n\n");
+
+		printf("1.Cambiar el nombre.\n");
+		printf("2.Cambiar el apellido.\n");
+		printf("3.Cambiar el salario.\n");
+		printf("4.Cambiar el sector.\n");
+		printf("5.Salir.\n\n");
+
+
+		utn_getEntero(&opcion, 4,"Ingrese la opcion que desea: ","Error. Ingrese un numero valido.\n",1,5);
+
+		return opcion;
+
+}
+
+
+
+

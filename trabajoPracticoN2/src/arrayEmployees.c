@@ -294,6 +294,7 @@ int modificarEmpleado(Employee* list, int len, int id)
 		int retorno = -1;
 		int indice = findEmployeeById(list,len,id);
 		char confirma;
+		char confirmaSalida;
 		Employee nuevoEmpleado;
 
 
@@ -315,23 +316,40 @@ int modificarEmpleado(Employee* list, int len, int id)
 
 				if(confirma == 's')
 				{
+					do
+					{
+						switch(menuModificar())
+						{
+							case 1:
+								utn_getCadena(nuevoEmpleado.name,51,4,"Ingrese el nuevo nombre del empleado: ","Error. Ingrese un nombre valido.\n");
+								strcpy(list[indice].name, nuevoEmpleado.name);
+								break;
+							case 2:
+								utn_getCadena(nuevoEmpleado.lastName,51,4,"Ingrese el nuevo apellido del empleado: ","Error. Ingrese un apellido valido.\n");
+								strcpy(list[indice].lastName,nuevoEmpleado.lastName);
 
-				utn_getCadena(nuevoEmpleado.name,51,4,"Ingrese el nuevo nombre del empleado: ","Error. Ingrese un nombre valido.\n");
-				strcpy(list[indice].name, nuevoEmpleado.name);
+								break;
+							case 3:
+								utn_getFlotante(&nuevoEmpleado.salary, 4, "Ingrese el nuevo salario del empleado: ", "Error.Ingrese un salario valido\n", 2000, 80000);
+								 list[indice].salary = nuevoEmpleado.salary;
+								break;
+							case 4:
+								utn_getEntero(&nuevoEmpleado.sector, 4,"Ingrese el nuevo sector del empleado(1-5): ","Error. Ingrese un sector valido\n",1,5);
+								 list[indice].sector = nuevoEmpleado.sector;
+								break;
+							case 5:
+								utn_getCaracter(&confirmaSalida,"Seguro que quiere salir? 's' para salir, 'n' para quedarse: ","Error. Ingrese 's' o 'n'.\n",'n','s',4);
+								break;
 
-				utn_getCadena(nuevoEmpleado.lastName,51,4,"Ingrese el nuevo apellido del empleado: ","Error. Ingrese un apellido valido.\n");
-				strcpy(list[indice].lastName,nuevoEmpleado.lastName);
+						}
 
-				utn_getFlotante(&nuevoEmpleado.salary, 4, "Ingrese el nuevo salario del empleado: ", "Error.Ingrese un salario valido\n", 2000, 80000);
-				nuevoEmpleado.salary = list[indice].salary;
+					}while(confirmaSalida != 's');
 
-				utn_getEntero(&nuevoEmpleado.sector, 4,"Ingrese el nuevo sector del empleado(1-5): ","Error. Ingrese un sector valido\n",1,5);
-				nuevoEmpleado.sector = list[indice].sector;
 
-				nuevoEmpleado.id = list[indice].id;
-				nuevoEmpleado.isEmpty = list[indice].isEmpty;
-				list[indice] = nuevoEmpleado;
-				retorno = 0;
+					nuevoEmpleado.id = list[indice].id;
+					nuevoEmpleado.isEmpty = list[indice].isEmpty;
+					//list[indice] = nuevoEmpleado;
+					retorno = 0;
 				}
 			}
 
