@@ -45,6 +45,11 @@ int main()
 					}
 
             	}
+            	else
+            	{
+
+            		printf("Ya cargo un archivo .bin antes.\n");
+            	}
                 break;
             case 2:
             	if(flagTxt == 0 && flagBin == 0)
@@ -58,57 +63,50 @@ int main()
             			}
 
                    }
+            	else
+            	{
+
+            		printf("Ya cargo un archivo .csv antes.\n");
+
+            	}
             	break;
             case 3:
-            	if(flagTxt || flagBin)
-            	{
             		controller_addEmployee(listaEmpleados);
 
-            	}
+
             	break;
             case 4:
-            	if(flagTxt || flagBin)
-            	{
-            		controller_editEmployee(listaEmpleados);
 
-            	}
+            		controller_editEmployee(listaEmpleados);
 
             	break;
             case 5:
-            	if(flagTxt || flagBin)
-            	 {
+
+
             		controller_removeEmployee(listaEmpleados);
-            	 }
+
 
             	break;
             case 6:
-            	if(flagTxt || flagBin)
-            	{
+
             		controller_ListEmployee(listaEmpleados);
 
-            	}
 
             	break;
             case 7:
-            	if(flagTxt || flagBin)
-            	 {
+
             	    controller_sortEmployee(listaEmpleados);
 
-            	}
             	break;
             case 8:
-            	if(flagTxt && flagBin == 0)
-            	{
 
-            		controller_saveAsText("data.csv", listaEmpleados);
-            	}
+            	controller_saveAsText("data.csv", listaEmpleados);
+
             	break;
             case 9:
-            	if(flagTxt == 0 && flagBin)
-            	 {
 
             	     controller_saveAsBinary("data.bin", listaEmpleados);
-            	  }
+
             	break;
             case 10:
             		printf("Desea salir? 's' para salir, 'n' para quedarse: ");

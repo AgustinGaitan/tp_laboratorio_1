@@ -127,6 +127,8 @@ int findEmployeeById(LinkedList* lista, int id)
 
 	}
 
+	employee_delete(pEmpleado);
+
 	return indice;
 
 }
