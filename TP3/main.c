@@ -27,21 +27,21 @@ int main()
 	setbuf(stdout, NULL);
 
 
-	int flagTxt = 0;
-	int flagBin = 0;
+	int flagTxt = 0;      //bandera para el archivo de tetxo
+	int flagBin = 0;	  //bandera para el archivo binario
     char confirmar;
     LinkedList* listaEmpleados = ll_newLinkedList();
     do{
         switch(menu())
         {
             case 1:
-            	if(flagTxt == 0 && flagBin == 0)
+            	if(flagTxt == 0 && flagBin == 0)  //para que entre solo si no se cargo el otro achivo
             	{
 
 					if(controller_loadFromText("data.csv",listaEmpleados) == 0)
 					{
 
-						flagTxt = 1;
+						flagTxt = 1;     //si se carga el archivo de texto, la bandera cambia
 
 					}
 
@@ -53,13 +53,13 @@ int main()
             	}
                 break;
             case 2:
-            	if(flagTxt == 0 && flagBin == 0)
+            	if(flagTxt == 0 && flagBin == 0) //para que entre solo si no se cargo el otro achivo
                   {
 
             		if(controller_loadFromBinary("data.bin",listaEmpleados) == 0)
             			{
 
-            				flagBin = 1;
+            				flagBin = 1;	//si se carga el archivo binario, la bandera cambia
 
             			}
 
