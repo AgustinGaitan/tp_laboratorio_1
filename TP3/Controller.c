@@ -258,7 +258,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 		char confirmar;
 		system("cls");
 
-			if((utn_getEntero(&auxId, 2, "Ingrese el id del empleado que le quiere dar de baja.\n", "Error. Id no encontrado", 0, 150000 ) == 0))
+			if((utn_getEntero(&auxId, 2, "Ingrese el id del empleado que le quiere dar de baja: \n", "Error. Id no encontrado", 0, 150000 ) == 0))
 			{
 				indice = findEmployeeById(pArrayListEmployee, auxId);  //encuentra el indice respectivo al id ingresado
 
@@ -377,7 +377,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 		Employee* pEmpleado;
 
 
-			pf = fopen(path, "w");                   //
+			pf = fopen(path, "w");                   //se abre el archivo en modo write "w"
 
 
 			if(pf != NULL)
@@ -392,6 +392,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 					   (employee_getHorasTrabajadas(pEmpleado, &auxHoras)==0) &&  // si esta todo ok pasa a imprimir los empleados
 					   (employee_getSueldo(pEmpleado, &auxSueldo)==0))
 					{
+
 						fprintf(pf, "%d,%s,%d,%d\n", auxId, auxNombre, auxHoras, auxSueldo);  //imprime a los empleados en el archivo
 						todoOk = 0;
 					}

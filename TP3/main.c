@@ -121,6 +121,10 @@ int main()
         system("cls");
 
     }while(confirmar != 's');
+
+    ll_deleteLinkedList(listaEmpleados);
+
+
     return 0;
 
 }
