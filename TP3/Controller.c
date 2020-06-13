@@ -334,7 +334,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 			system("cls");
 			utn_getEntero(&orden, 2, "Ingrese el orden en el que quiere que se \nacomoden los nombres.Recuerde que este proceso\ntarda unos segundos. (1 ascendente o 0 descendente): ", "Error. Ingrese un numero valido\n", 0, 1);
 
-			ll_sort(pArrayListEmployee, sortEmployee, orden);
+			ll_sort(pArrayListEmployee, sortEmployeeNombre, orden);
 			break;
 		case 2:
 			system("cls");

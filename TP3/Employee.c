@@ -164,7 +164,7 @@ int compareId(LinkedList* lista, int id)
 		return todoOk;
 }
 
-int sortEmployee(void* x, void* y)
+int sortEmployeeNombre(void* x, void* y)
 {
 	int ordenDevuelto;
 	char nombreUno[20];

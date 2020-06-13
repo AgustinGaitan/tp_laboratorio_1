@@ -8,7 +8,22 @@
 #ifndef MENUS_H_
 #define MENUS_H_
 
+/** brief menu principal
+ *
+ *
+ *
+ * return la opcion elegida
+ *
+ */
 int menu();
+
+/** brief menu de modificacion
+ *
+ *
+ *
+ * return la opcion elegida
+ *
+ */
 int menuModificacion();
 
 
