@@ -113,17 +113,22 @@ int findEmployeeById(LinkedList* lista, int id)
 	for(int i = 0; i < tam; i++)
 	{
 
-		pEmpleado = (Employee*) ll_get(lista, i);
+		pEmpleado = ll_get(lista, i);
 
-		employee_getId(pEmpleado, &auxId);
-
-		if(auxId == id)
+		if(employee_getId(pEmpleado, &auxId) == 0)
 		{
+			if(auxId == id)
+			{
 
-			indice = i;
-			break;
+				indice = i;
+				break;
+
+			}
+
 
 		}
+
+
 
 	}
 
