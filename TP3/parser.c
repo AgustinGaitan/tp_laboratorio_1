@@ -59,13 +59,15 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 			{
 				pEmployee = employee_new(); // se busca espacio
 
-				fread(pEmployee, sizeof(Employee), 1, pFile);
+
+
+
 				if(fread(pEmployee, sizeof(Employee), 1, pFile) == 1)
 				{
 					ll_add(pArrayListEmployee, pEmployee);
 					todoOk = 0;
 				}
-			}while(!feof(pFile)); //mientras no termine el archivo
+			}while(!feof(pFile));
 		}
 
 
