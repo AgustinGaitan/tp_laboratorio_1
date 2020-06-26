@@ -30,7 +30,9 @@ int menu()
 	printf("8. Guardar una copia del archivo, se llamara ''dataCopia.csv''\n");
 	printf("9. Limpiar lista.\n");
 	printf("10. Crear sublista de nombres\n");
-	printf("11. Salir\n");
+	printf("11. Buscar nombre especifico.\n");
+	printf("12. Insertar jugador.\n");
+	printf("13. Salir\n");
 
 
 	printf("Ingrese la opcion que desee: ");

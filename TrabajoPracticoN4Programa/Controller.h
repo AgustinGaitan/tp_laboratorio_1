@@ -99,5 +99,10 @@ int controller_clearList(LinkedList* pArrayPlayer);
 int controller_createSubList(LinkedList* pArrayPlayer);
 
 
+int controller_findPerName(LinkedList* pArrayPlayer);
+
+int controller_insertPlayer(LinkedList* pArrayPlayer);
+
+
 
 

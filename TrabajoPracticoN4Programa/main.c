@@ -106,10 +106,16 @@ int main()
 
 
                 break;
-            case 10:
+             case 10:
                     controller_createSubList(listaPlayers);
                 break;
-            case 11:
+               case 11:
+            		//controller_findPerName(listaPlayers);
+            	break;
+                case 12:
+            		controller_insertPlayer(listaPlayers);
+            	break;
+            	case 13:
             		printf("Desea salir? 's' para salir, 'n' para quedarse: ");
             		fflush(stdin);
             		scanf("%c", &confirmar);

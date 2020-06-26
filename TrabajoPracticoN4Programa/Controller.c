@@ -78,25 +78,25 @@ int controller_addPlayer(LinkedList* pArrayPlayer)
 	system("cls");
 
 
-	if((utn_getCadena(aux->nombre,20,3,"Ingrese el nombre del jugador: ","Error.Ingrese un nombre valido.\n") == 0))
+	if(!(utn_getCadena(aux->nombre,20,3,"Ingrese el nombre del jugador: ","Error.Ingrese un nombre valido.\n")))
 			{
 
 				if(player_setNombre(aux, aux->nombre) == 0)
 				{
 					system("cls");
-					if(utn_getEntero(&aux->nivel, 3, "Ingrese el nivel del jugador: ", "Error. Ingrese un numero valido.\n",0,250) == 0)
+					if(!(utn_getEntero(&aux->nivel, 3, "Ingrese el nivel del jugador: ", "Error. Ingrese un numero valido.\n",0,250)))
 					{
 
 						if(player_setNivel(aux, aux->nivel) == 0)
 						{
 							system("cls");
-							if(utn_getEntero(&aux->puntos, 3, "Ingrese el puntaje del jugador: ", "Error. Ingrese un numero valido.\n",0,150000) == 0)
+							if(!(utn_getEntero(&aux->puntos, 3, "Ingrese el puntaje del jugador: ", "Error. Ingrese un numero valido.\n",0,150000)))
 							{
 
 								if(player_setPuntos(aux, aux->puntos) == 0)
 								{
 									system("cls");
-									if(utn_getEntero(&aux->id, 3, "Ingrese el id del jugador: ", "Error. Ingrese un numero valido.\n",0,150000) == 0)
+									if(!(utn_getEntero(&aux->id, 3, "Ingrese el id del jugador: ", "Error. Ingrese un numero valido.\n",0,150000)))
 									{
 
 										if(compareId(pArrayPlayer, aux->id))
@@ -438,6 +438,139 @@ int controller_createSubList(LinkedList* pArrayPlayer)
 
 }
 
+/*int controller_findPerName(LinkedList* pArrayPlayer)
+{
+    ePlayer auxPlayer;
+    int indice;
+    char auxNombre[20];
+    int todoOk = 1;
+
+
+    if(!(utn_getCadena(&auxNombre,20,3,"Ingrese el nombre del jugador que desea corroborar si existe.\n Utilice la primera letra en mayusculas : ","Error.Ingrese un nombre valido.\n")))
+    {
+
+
+
+
+        indice = ll_indexOf(pArrayPlayer,auxPlayer);
+
+
+        if(indice > 0 && indice < ll_len(pArrayPlayer))
+        {
+
+            printPlayer(pArrayPlayer,indice);
+
+        }
+        else
+        {
+
+            printf("No hay un jugador con ese nombre.\n\n");
+
+        }
+
+
+        todoOk = 0;
+    }
+
+
+
+    return todoOk;
+
+}*/
+
+
+int controller_insertPlayer(LinkedList* pArrayPlayer)
+{
+    system("cls");
+    ePlayer* aux = player_new();
+    int nuevoIndice;
+    int nuevoIndiceMostrar;
+    int todoOk = 1;
+
+
+            if(!(utn_getCadena(aux->nombre,20,3,"Ingrese el nombre del jugador: ","Error.Ingrese un nombre valido.\n")))
+			{
+
+				if(player_setNombre(aux, aux->nombre) == 0)
+				{
+					system("cls");
+					if(!(utn_getEntero(&aux->nivel, 3, "Ingrese el nivel del jugador: ", "Error. Ingrese un numero valido.\n",0,250)))
+					{
+
+						if(player_setNivel(aux, aux->nivel) == 0)
+						{
+							system("cls");
+							if(!(utn_getEntero(&aux->puntos, 3, "Ingrese el puntaje del jugador: ", "Error. Ingrese un numero valido.\n",0,150000)))
+							{
+
+								if(player_setPuntos(aux, aux->puntos) == 0)
+								{
+									system("cls");
+									if(!(utn_getEntero(&aux->id, 3, "Ingrese el id del jugador: ", "Error. Ingrese un numero valido.\n",0,150000)))
+									{
+
+										if(compareId(pArrayPlayer, aux->id))
+										{
+
+                                            if(!(utn_getEntero(&nuevoIndice, 3, "Ingrese en que indice desea posicionarlo: ", "Error. Ingrese un numero valido.\n",0,150000)))
+                                            {
+
+
+                                                if(!(ll_push(pArrayPlayer,nuevoIndice,&aux)))
+                                                {
+
+                                                    nuevoIndiceMostrar = ll_indexOf(pArrayPlayer,&aux);
+
+
+                                                        printf("El usuario fue ingresado exitosamente en el indice %d", nuevoIndiceMostrar);
+                                                        todoOk = 0;
+                                                }
+                                                else
+                                                {
+
+
+                                                    printf("No se pudo insertar dicho jugador.\n\n");
+
+
+                                                }
+
+
+
+
+                                            }
+
+
+
+										}
+										else
+										{
+											printf("Id usado.\n\n");
+
+										}
+
+
+									}
+
+
+								}
+
+							}
+
+
+						}
+
+
+					}
+
+				}
+
+
+			}
+
+
+    return todoOk;
+
+}
 
 int controller_saveAsText(char* path , LinkedList* pArrayPlayer)
 {
