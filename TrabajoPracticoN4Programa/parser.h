@@ -9,10 +9,10 @@
 #define PARSER_H_
 
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
+/** \brief Parsea los datos los datos de los jugadores desde el archivo data.csv
  *
  * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayPlayer LinkedList*
  * \return int
  *
  */

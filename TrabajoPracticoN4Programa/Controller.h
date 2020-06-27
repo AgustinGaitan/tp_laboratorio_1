@@ -1,7 +1,7 @@
 
 
 
-/*\brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
+/*\brief Carga los datos de los jugadores desde el archivo data.csv (modo texto).
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*
@@ -14,7 +14,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayPlayer);
 
 
 
-/** \brief Alta de empleados
+/** \brief Alta de jugadores
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*
@@ -24,7 +24,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayPlayer);
 
 int controller_addPlayer(LinkedList* pArrayPlayer);
 
-/** \brief Modificar datos de empleado
+/** \brief Modificar datos del jugador
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*
@@ -34,7 +34,7 @@ int controller_addPlayer(LinkedList* pArrayPlayer);
 
 int controller_editPlayer(LinkedList* pArrayPlayer);
 
-/** \brief Baja de empleado
+/** \brief Baja del jugador
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*
@@ -45,7 +45,7 @@ int controller_editPlayer(LinkedList* pArrayPlayer);
 int controller_removePlayer(LinkedList* pArrayPlayer);
 
 
-/** \brief Listar empleados
+/** \brief Listar jugadores
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*
@@ -55,7 +55,7 @@ int controller_removePlayer(LinkedList* pArrayPlayer);
 
 int controller_ListPlayer(LinkedList* pArrayPlayer);
 
-/** \brief Ordenar empleados
+/** \brief Ordenar jugadores
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*
@@ -65,7 +65,7 @@ int controller_ListPlayer(LinkedList* pArrayPlayer);
 int controller_sortPlayer(LinkedList* pArrayPlayer);
 
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
+/** \brief Guarda los datos de los jugadores en el archivo data.csv (modo texto).
  *
  * \param path char*
  * \param pArrayPlayer LinkedList*

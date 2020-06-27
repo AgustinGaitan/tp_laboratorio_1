@@ -10,11 +10,11 @@ typedef struct
     int puntos;
 }ePlayer;
 
-/** brief Guarda un nuevo empleado en la memoria dinamica con espacios vacios
+/** brief Guarda un nuevo jugador en la memoria dinamica con espacios vacios
  *
  *
  *
- * return Empleado guardado en memoria dinamica
+ * return jugador guardado en memoria dinamica
  */
 ePlayer* player_new();
 
@@ -22,7 +22,7 @@ ePlayer* player_new();
  *
  *	param id tipo string
  *	param nombre
- *	param horas tipo string
+ *	param nivel string
  *	param puntos tipo string
  *
  *  return
@@ -32,23 +32,23 @@ ePlayer* player_new();
 ePlayer* player_newParametros(char* idStr,char* nombreStr,char* nivelStr, char* puntosStr);
 
 
-/** brief elimina un empleado de la memoria dinamica
+/** brief elimina un jugador de la memoria dinamica
  *
- * param empleado a eliminar
+ * param jugador a eliminar
  *
  * return
  */
 void player_delete(ePlayer* this);
 
-/** brief setea el id a un empleado
+/** brief setea el id a un jugador
  *
- * param empleado
+ * param jugador
  * param id a setear
  *
  * return si todo esta ok 0, si no 1
  *
  *
- * param empleado
+ * param jugador
  * /param id en el que se va a guardar el id obtenido
  *
  * /return si todo esta ok 0, si no 1
@@ -58,9 +58,9 @@ void player_delete(ePlayer* this);
 int player_getId(ePlayer* this,int* id);
 
 
-/** brief setea el id a un empleado
+/** brief setea el id a un jugador
  *
- * param empleado
+ * param jugador
  * param id a setear
  *
  * return si todo esta ok 0, si no 1
@@ -69,9 +69,9 @@ int player_getId(ePlayer* this,int* id);
 
 int player_setId(ePlayer* this,int id);
 
-/** brief setea el nombre a un empleado
+/** brief setea el nombre a un jugador
  *
- * param empleado
+ * param jugador
  * param nombre a setear
  *
  * return si todo esta ok 0, si no 1
@@ -81,9 +81,9 @@ int player_setId(ePlayer* this,int id);
 
 int player_setNombre(ePlayer* this,char* nombre);
 
-/** brief obtener el nombre de un empleado
+/** brief obtener el nombre de un jugador
  *
- * param empleado
+ * param jugador
  * param nombre en el que se va a guardar el nombre obtenido
  *
  * return si todo esta ok 0, si no 1
@@ -91,10 +91,10 @@ int player_setNombre(ePlayer* this,char* nombre);
  */
 int player_getNombre(ePlayer* this,char* nombre);
 
-/** brief setea las horas trabajadas a un empleado
+/** brief setea las horas trabajadas a un jugador
  *
- * param empleado
- * param horas trabajadas a setear
+ * param jugador
+ * param nivel a setear
  *
  * return si todo esta ok 0, si no 1
  *
@@ -103,9 +103,9 @@ int player_getNombre(ePlayer* this,char* nombre);
 int player_setNivel(ePlayer* this,int nivel);
 
 
-/** brief obtener las horas trabajadas de un empleado
+/** brief obtener las horas trabajadas de un jugador
  *
- * param empleado
+ * param jugador
  * param parametro en el que se va a guardar el nombre obtenido
  *
  * return si todo esta ok 0, si no 1
@@ -114,9 +114,9 @@ int player_setNivel(ePlayer* this,int nivel);
 
 int player_getNivel(ePlayer* this,int* nivel);
 
-/** brief setear el puntos a un empleado
+/** brief setear el puntos a un jugador
  *
- * param empleado
+ * param jugador
  * param puntos a setear
  *
  * return si todo esta ok 0, si no 1
@@ -125,10 +125,10 @@ int player_getNivel(ePlayer* this,int* nivel);
 
 int player_setPuntos(ePlayer* this,int puntos);
 
-/** brief obtener el puntos de un empleado
+/** brief obtener el puntos de un jugador
  *
- * param empleado
- * param parametro en el que se va a guardar el puntos
+ * param jugador
+ * param parametro en el que se va a guardar los puntos
  *
  * return si todo esta ok 0, si no 1
  *
@@ -138,10 +138,10 @@ int player_getPuntos(ePlayer* this,int* puntos);
 
 //------------------------------------------------------------------------------------------
 
-/** brief mostrar un empleado
+/** brief mostrar un jugador
  *
  * param lista
- * param indice del empleado
+ * param indice del jugador
  *
  * return si todo esta ok 0, si no 1
  *
@@ -150,7 +150,7 @@ int player_getPuntos(ePlayer* this,int* puntos);
 
 int printPlayer(LinkedList* lista, int indice);
 
-/** brief buscar un empleado por id
+/** brief buscar un jugador por id
  *
  * param lista
  * param id a buscar
@@ -166,25 +166,25 @@ int findPlayerById(LinkedList* lista, int id);
  * param lista
  * param id a comparar dentro de la funcion con un auxiliar
  *
- * return indice del empleado
+ * return indice del jugador
  *
  */
 int compareId(LinkedList* lista, int id);
 
-/** brief ordenar dos empleados por nombre
+/** brief ordenar dos jugadores por nombre
  *
- * param empleado x
- * param empleado y
+ * param jugador x
+ * param jugador y
  *
  * return si todo esta ok 0, si no 1
  *
  */
 int sortPlayerNombre(void* x, void* y);
 
-/** brief ordenar dos empleados por id
+/** brief ordenar dos jugadores por id
  *
- * param empleado x
- * param empleado y
+ * param jugador x
+ * param jugador y
  *
  * return si todo esta ok 0, si no 1
  *
