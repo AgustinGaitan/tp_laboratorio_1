@@ -81,10 +81,55 @@
 
 1593011357 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\linkedlist.h
 
-1593220795 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\controller.h
+1593221809 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\controller.h
 
-1593196385 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\players.h
+1593221744 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\players.h
 	"LinkedList.h"
 
 1592036772 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\menus.h
+
+1593222441 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"players.h"
+	"parser.h"
+	"utn.h"
+	"menus.h"
+
+1593221758 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\parser.h
+
+1589209793 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\utn.h
+
+1593189831 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1593221307 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"utn.h"
+
+1593199994 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"players.h"
+
+1589545125 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1593222347 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\players.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"players.h"
+	"utn.h"
 

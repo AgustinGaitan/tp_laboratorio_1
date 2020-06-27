@@ -106,10 +106,6 @@ int controller_editPlayer(LinkedList* pArrayPlayer)
 {
 	int todoOk = 1;
 		int auxId;
-		int nuevoId;
-		char nuevoNombre[20];
-		int nuevoNivel;
-		int nuevosPuntos;
 		ePlayer* pPlayer = player_new();
 		int indice = -1;
 		char confirmar;
@@ -577,17 +573,17 @@ int controller_saveAsText(char* path , LinkedList* pArrayPlayer)
 			if(pf != NULL)
 			{
                 fprintf(pf,"Id,Nombre,Nivel,Puntaje\n");
-				for(int i = 0; i < tam; i++)  //recorre para cada empleado
+				for(int i = 0; i < tam; i++)  //recorre para cada jugador
 				{
-					pPlayer = ll_get(pArrayPlayer, i);  //obtiene cada empleado mediante el indice
+					pPlayer = ll_get(pArrayPlayer, i);  //obtiene cada jugador mediante el indice
 
 					if((player_getId(pPlayer, &auxId)==0) &&
 					   (player_getNombre(pPlayer, auxNombre)==0) &&
-					   (player_getNivel(pPlayer, &auxNivel)==0) &&  // si esta todo ok pasa a imprimir los empleados
+					   (player_getNivel(pPlayer, &auxNivel)==0) &&  // si esta todo ok pasa a imprimir los jugadores
 					   (player_getPuntos(pPlayer, &auxPuntos)==0))
 					{
 
-						fprintf(pf, "%d,%s,%d,%d\n", auxId, auxNombre, auxNivel, auxPuntos);  //imprime a los empleados en el archivo
+						fprintf(pf, "%d,%s,%d,%d\n", auxId, auxNombre, auxNivel, auxPuntos);  //imprime a los jugadores en el archivo
 						todoOk = 0;
 					}
 				}
@@ -636,11 +632,11 @@ int controller_saveCopy(char* path ,LinkedList* pArrayPlayer)
 
                             if((player_getId(pPlayer, &auxId)==0) &&
                                (player_getNombre(pPlayer, auxNombre)==0) &&
-                               (player_getNivel(pPlayer, &auxNivel)==0) &&  // si esta todo ok pasa a imprimir los empleados
+                               (player_getNivel(pPlayer, &auxNivel)==0) &&  // si esta todo ok pasa a imprimir los jugadores
                                (player_getPuntos(pPlayer, &auxPuntos)==0))
                             {
 
-                                fprintf(pf, "%d,%s,%d,%d\n", auxId, auxNombre, auxNivel, auxPuntos);  //imprime a los empleados en el archivo
+                                fprintf(pf, "%d,%s,%d,%d\n", auxId, auxNombre, auxNivel, auxPuntos);  //imprime a los jugadores en el archivo
                                 todoOk = 0;
                             }
                         }

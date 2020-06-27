@@ -111,7 +111,7 @@ int findPlayerById(LinkedList* lista, int id)
 	for(int i = 0; i < tam; i++)
 	{
 
-		pPlayer = ll_get(lista, i);
+		pPlayer = (ePlayer*)ll_get(lista, i);
 
 		if(player_getId(pPlayer, &auxId) == 0)
 		{
