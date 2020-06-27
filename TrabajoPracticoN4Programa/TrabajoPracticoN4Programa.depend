@@ -71,7 +71,7 @@
 	"players.h"
 	"utn.h"
 
-1593221123 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\main.c
+1593270924 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -88,7 +88,7 @@
 
 1592036772 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\menus.h
 
-1593222441 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\controller.c
+1593271533 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -126,7 +126,7 @@
 	<ctype.h>
 	"utn.h"
 
-1593222918 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\players.c
+1593271664 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\players.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -30,8 +30,15 @@ int main()
 
                 break;
             case 2:
-
+                if(!ll_isEmpty(listaPlayers))
+                {
             		controller_addPlayer(listaPlayers);
+                }
+                else
+                {
+
+                    printf("Cargue primero la lista\n\n");
+                }
 
 
             	break;

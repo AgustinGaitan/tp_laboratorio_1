@@ -57,8 +57,13 @@ ePlayer* player_newParametros(char* idStr,char* nombreStr,char* nivelStr, char* 
 
 void player_delete(ePlayer* this)
 {
+    if (this != NULL)
+    {
 
-	free(this);
+        free(this);
+
+    }
+
 
 
 }
