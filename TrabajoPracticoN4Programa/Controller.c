@@ -47,11 +47,7 @@ int controller_addPlayer(LinkedList* pArrayPlayer)
 
 	system("cls");
 
-	auxDos = (ePlayer*) ll_get(pArrayPlayer, ultimoIndice);
-	 player_getId(auxDos,&ultimoId);
 
-
-	 aux->id = ultimoId+1;
 
 
 	if(!(utn_getCadena(aux->nombre,20,3,"Ingrese el nombre del jugador: ","Error.Ingrese un nombre valido.\n")))
@@ -60,13 +56,13 @@ int controller_addPlayer(LinkedList* pArrayPlayer)
 				if(player_setNombre(aux, aux->nombre) == 0)
 				{
 					system("cls");
-					if(!(utn_getEntero(&aux->nivel, 3, "Ingrese el nivel del jugador: ", "Error. Ingrese un numero valido.\n",0,250)))
+					if(!(utn_getEntero(&aux->nivel, 3, "Ingrese el nivel del jugador(0-250): ", "Error. Ingrese un numero valido.\n",0,250)))
 					{
 
 						if(player_setNivel(aux, aux->nivel) == 0)
 						{
 							system("cls");
-							if(!(utn_getEntero(&aux->puntos, 3, "Ingrese el puntaje del jugador: ", "Error. Ingrese un numero valido.\n",0,150000)))
+							if(!(utn_getEntero(&aux->puntos, 3, "Ingrese el puntaje del jugador(0-150000): ", "Error. Ingrese un numero valido.\n",0,150000)))
 							{
 
 								if(player_setPuntos(aux, aux->puntos) == 0)
@@ -74,6 +70,11 @@ int controller_addPlayer(LinkedList* pArrayPlayer)
 									system("cls");
 									//if(!(utn_getEntero(&aux->id, 3, "Ingrese el id del jugador: ", "Error. Ingrese un numero valido.\n",0,150000)))
 									//{
+                                        auxDos = (ePlayer*) ll_get(pArrayPlayer, ultimoIndice);
+                                        player_getId(auxDos,&ultimoId);
+
+
+                                        aux->id = ultimoId+1;
 
 										if(compareId(pArrayPlayer, aux->id))
 										{

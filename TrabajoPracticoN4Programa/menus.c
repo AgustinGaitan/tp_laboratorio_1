@@ -20,7 +20,7 @@ int menu()
 	printf("Bienvenido al sistema de almacenamiento de datos\nde jugadores de Linked List: the game\n\n");
 
 
-	printf("1. Cargar los datos de jugadores desde\n el archivo data.csv (modo texto).\n");
+	printf("1. Cargar los datos de jugadores desde\n el archivo data.csv.\n");
 	printf("2. Agregar jugador.\n");
 	printf("3.Modificar datos de jugador.\n");
 	printf("4. Eliminar jugador.\n");
