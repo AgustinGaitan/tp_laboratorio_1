@@ -82,8 +82,9 @@ int printPlayer(LinkedList* lista, int indice)
 			   player_getNombre(pPlayer, auxNombre) ==0 &&
 			   player_getNivel(pPlayer, &auxNivel) == 0 &&
 			   player_getPuntos(pPlayer, &auxPuntos) == 0)
+
 			{
-				printf("%d    %-10s      %-3d                 %-3d\n", auxId, auxNombre, auxNivel, auxPuntos);
+				printf("%d    %-10s          %-3d                 %-3d\n", auxId, auxNombre, auxNivel, auxPuntos);
 			}
 
 

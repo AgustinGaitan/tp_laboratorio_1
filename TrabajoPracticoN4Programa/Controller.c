@@ -32,40 +32,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayPlayer) //funcion que
 }
 
 
-/*int controller_loadFromBinary(char* path , LinkedList* pArrayPlayer)
-{
 
-	int todoOk = 1;
-	system("cls");
-
-
-		FILE* pf = fopen(path, "rb"); // se abre el archivo con opcion read binary "rb"
-
-
-
-
-
-		if(pf != NULL)
-		{
-			parser_EmployeeFromBinary(pf, pArrayPlayer);       //se parsea
-
-
-				printf("Archivo encontrado.\n");
-				todoOk = 0;
-
-		}
-		else
-		{
-			printf("Error. No se encontro el archivo.\n");
-		}
-		fclose(pf);
-
-
-
-
-
-    return todoOk;
-}*/
 
 
 int controller_addPlayer(LinkedList* pArrayPlayer)
@@ -156,14 +123,18 @@ int controller_editPlayer(LinkedList* pArrayPlayer)
 				//printf("%d", indice);
 				if(indice >= 0)
 				{
-					printf("Id     Nombre        Nivel       Puntos\n\n");
+					printf("Id       Nombre          Nivel         Puntos\n\n");
 					printPlayer(pArrayPlayer, indice);            //muestra al jugador que se va a modificar
 
 					printf("\nConfirma la modificacion del jugador ?'s' para aceptar, 'n' para negar ");
 					fflush(stdin);
 					scanf("%c", &confirmar);
+
+
 					if(confirmar == 's')
 					{
+
+					    pPlayer = ll_get(pArrayPlayer,indice);
 
 						do
 						{
@@ -173,39 +144,34 @@ int controller_editPlayer(LinkedList* pArrayPlayer)
 
 								case 1:				//modificacion de id
 									system("cls");
-									pPlayer = ll_get(pArrayPlayer,indice);
-									printf("Ingrese el nuevo id: ");
-									scanf("%d", &nuevoId);
-									player_setId(pPlayer, nuevoId);  //se setea el nuevo id
+
+									utn_getEntero(&pPlayer->id, 3, "Ingrese el nuevo id del jugador: ", "Error. Ingrese un numero valido.\n",0,150000);
+
 									printf("Id modificado.\n");
 
 									break;
 								case 2:              //modificacion de nombre
 									system("cls");
-									pPlayer = ll_get(pArrayPlayer,indice);
-									printf("Ingrese el nuevo nombre: ");
-									fflush(stdin);
-									gets(nuevoNombre);
-									player_setNombre(pPlayer, nuevoNombre);  //se le setea el nuevo nombre
+
+									utn_getCadena(pPlayer->nombre,20,3,"Ingrese el nuevo nombre del jugador: ","Error.Ingrese un nombre valido.\n");
+
 									printf("Nombre modificado.\n");
 
 									break;
-								case 3:                   //modificacion de horas
+								case 3:                   //modificacion de nivel
 										system("cls");
-										pPlayer = ll_get(pArrayPlayer,indice);
-										printf("Ingrese el nuevo nivel: ");
-										scanf("%d", &nuevoNivel);
-										player_setNivel(pPlayer, nuevoNivel);     //se le setean las nuevas horas
+
+										utn_getEntero(&pPlayer->nivel, 3, "Ingrese el nuevo nivel del jugador: ", "Error. Ingrese un numero valido.\n",0,250);
+
 										printf("Nivel modificado.\n");
 
 									break;
-								case 4:                                     //modificacion de sueldo
+								case 4:                                     //modificacion de puntaje
 
-									pPlayer = ll_get(pArrayPlayer,indice);
-									printf("Ingrese el nuevo puntaje:  ");
-									scanf("%d", &nuevosPuntos);
-									player_setPuntos(pPlayer, nuevosPuntos);       //se le setea el nuevo sueldo
-									printf("Puntaje.\n");
+
+									utn_getEntero(&pPlayer->puntos, 3, "Ingrese la cantidad de puntos del jugador: ", "Error. Ingrese un numero valido.\n",0,150000);
+									      //se le setea el nuevo puntaje
+									printf("Puntaje modificado.\n");
 									break;
 								case 5:
 									printf("Desea salir? 's' para salir, 'n' para quedarse: ");
@@ -213,6 +179,7 @@ int controller_editPlayer(LinkedList* pArrayPlayer)
 									scanf("%c", &confirmarSwitch);
 									break;
 							}
+							ll_set(pArrayPlayer,indice,pPlayer); //setea las modificaciones
 
 							system("pause");
 							system("cls");
@@ -224,12 +191,13 @@ int controller_editPlayer(LinkedList* pArrayPlayer)
 
 						todoOk = 0;
 					}
-					else if(indice == -1)
+
+				}
+				else if(indice == -1)
 					{
 						printf("\nNo se encontro un jugador con ese id\n\n");
 
 					}
-				}
 
 			}
 
@@ -249,13 +217,13 @@ int controller_removePlayer(LinkedList* pArrayPlayer)
 		char confirmar;
 		system("cls");
 
-			if((utn_getEntero(&auxId, 2, "Ingrese el id del jugador que le quiere dar de baja: \n", "Error. Id no encontrado", 0, 150000 ) == 0))
+			if((utn_getEntero(&auxId, 2, "Ingrese el id del jugador que desea eliminar: \n", "Error. Id no encontrado", 0, 150000 ) == 0))
 			{
 				indice = findPlayerById(pArrayPlayer, auxId);  //encuentra el indice respectivo al id ingresado
 
 				if(indice >= 0)
 				{
-					printf("Id    Nombre   Nivel      Puntos\n\n");
+					printf("Id    Nombre        Nivel      Puntos\n\n");
 					printPlayer(pArrayPlayer, indice);
 
 					printf("Confirma la baja del jugador?'s' para aceptar, 'n' para negar ");
@@ -295,7 +263,7 @@ int controller_ListPlayer(LinkedList* pArrayPlayer)
 
 		if(pArrayPlayer != NULL)
 		{
-			printf("Id     Nombre         Nivel         Puntaje\n\n");
+			printf("Id      Nombre           Nivel         Puntaje\n\n");
 			for(int i = 0; i < tam; i++)
 			{
 
@@ -438,45 +406,7 @@ int controller_createSubList(LinkedList* pArrayPlayer)
 
 }
 
-/*int controller_findPerName(LinkedList* pArrayPlayer)
-{
-    ePlayer auxPlayer;
-    int indice;
-    char auxNombre[20];
-    int todoOk = 1;
 
-
-    if(!(utn_getCadena(&auxNombre,20,3,"Ingrese el nombre del jugador que desea corroborar si existe.\n Utilice la primera letra en mayusculas : ","Error.Ingrese un nombre valido.\n")))
-    {
-
-
-
-
-        indice = ll_indexOf(pArrayPlayer,auxPlayer);
-
-
-        if(indice > 0 && indice < ll_len(pArrayPlayer))
-        {
-
-            printPlayer(pArrayPlayer,indice);
-
-        }
-        else
-        {
-
-            printf("No hay un jugador con ese nombre.\n\n");
-
-        }
-
-
-        todoOk = 0;
-    }
-
-
-
-    return todoOk;
-
-}*/
 
 
 int controller_insertPlayer(LinkedList* pArrayPlayer)
@@ -512,18 +442,29 @@ int controller_insertPlayer(LinkedList* pArrayPlayer)
 										if(compareId(pArrayPlayer, aux->id))
 										{
 
-                                            if(!(utn_getEntero(&nuevoIndice, 3, "Ingrese en que indice desea posicionarlo: ", "Error. Ingrese un numero valido.\n",0,150000)))
+                                            if(!(utn_getEntero(&nuevoIndice, 3, "Ingrese en que posicion desea posicionarlo.\nTenga en cuenta que no se reemplazara el id. Simplemente se lo ubica en una posicion deseada: ", "Error. Ingrese un numero valido.\n",0,150000)))
                                             {
 
 
-                                                if(!(ll_push(pArrayPlayer,nuevoIndice,&aux)))
+                                                if(!(ll_push(pArrayPlayer,nuevoIndice,aux)))
                                                 {
+                                                        system("cls");
+                                                    nuevoIndiceMostrar = ll_indexOf(pArrayPlayer,aux);
 
-                                                    nuevoIndiceMostrar = ll_indexOf(pArrayPlayer,&aux);
+                                                    if(ll_contains(pArrayPlayer,aux)) //valida que contenga el elemento dado
+                                                       {
+                                                           printf("El usuario fue ingresado exitosamente en el indice %d\n\n", nuevoIndiceMostrar);
+                                                            todoOk = 0;
+
+                                                       }
+                                                       else
+                                                       {
 
 
-                                                        printf("El usuario fue ingresado exitosamente en el indice %d", nuevoIndiceMostrar);
-                                                        todoOk = 0;
+                                                           printf("Error.\n\n");
+                                                       }
+
+
                                                 }
                                                 else
                                                 {
@@ -572,6 +513,51 @@ int controller_insertPlayer(LinkedList* pArrayPlayer)
 
 }
 
+
+int controller_movePlayer(LinkedList* pArrayPlayer)
+{
+
+    system("cls");
+    ePlayer* aux = player_new();
+    ePlayer* auxDos = player_new();
+    int indice;
+    int nuevoIndice;
+    int todoOk = 1;
+
+    if(!(utn_getEntero(&aux->id,3,"Ingrese el ID del jugador que desea mover: ","Error. Ingrese un ID valido",0,150000)))
+    {
+
+
+        indice = findPlayerById(pArrayPlayer,aux->id);
+
+            printf("Id     Nombre       Nivel      Puntaje\n");
+            printPlayer(pArrayPlayer, indice);
+
+           auxDos = (ePlayer*) ll_pop(pArrayPlayer,indice);
+
+
+
+           if(!(utn_getEntero(&nuevoIndice,3,"Ingrese la nueva posicion del jugador\nRecuerde que no se modifica el id:  ","Error. Ingrese una posicion valida.\n",0,ll_len(pArrayPlayer))))
+
+           if(!(ll_push(pArrayPlayer, nuevoIndice , auxDos)))
+              {
+
+
+                printf("Jugador movido con exito.\n\n");
+                free(aux);
+                free(auxDos);
+                todoOk = 0;
+
+              }
+
+
+    }
+
+
+
+    return todoOk;
+
+}
 int controller_saveAsText(char* path , LinkedList* pArrayPlayer)
 {
 	int todoOk = 1;

@@ -75,7 +75,7 @@ int controller_sortPlayer(LinkedList* pArrayPlayer);
 int controller_saveAsText(char* path , LinkedList* pArrayPlayer);
 
 
-/** \brief Crea una copia y la guarda bajo
+/** \brief Crea una copia y la guarda bajo el nombre "dataCopia.csv"
  *
  * \param patch
  * \param array de jugadores
@@ -89,19 +89,50 @@ int controller_saveCopy(char* path , LinkedList* pArrayPlayer);
 
 
 
-
+/** \brief Limpia la lista
+ *
+ *
+ * \param array de jugadores
+ * \return int
+ *
+ */
 
 int controller_clearList(LinkedList* pArrayPlayer);
 
 
-
+/** \brief Crea una sublista
+ *
+ *
+ * \param array de jugadores
+ * \return int
+ *
+ */
 
 int controller_createSubList(LinkedList* pArrayPlayer);
 
 
-int controller_findPerName(LinkedList* pArrayPlayer);
+/** \brief Inserta un jugador en un indice a ingresar
+ *
+ *
+ * \param array de jugadores
+ * \return int
+ *
+ */
 
 int controller_insertPlayer(LinkedList* pArrayPlayer);
+
+/** \brief Mueve un jugador en un indice a seleccionar
+ *
+ *
+ * \param array de jugadores
+ * \return int
+ *
+ */
+
+int controller_movePlayer(LinkedList* pArrayPlayer);
+
+
+
 
 
 

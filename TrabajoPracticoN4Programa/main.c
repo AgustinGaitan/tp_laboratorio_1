@@ -12,7 +12,7 @@ int main()
 
 
 
-	int flagTxt = 0;      //bandera para el archivo de tetxo
+
     char confirmar;
     LinkedList* listaPlayers = ll_newLinkedList();
 
@@ -22,33 +22,42 @@ int main()
         switch(menu())
         {
             case 1:
-            	if(flagTxt == 0)  //para que entre solo si no se cargo el otro achivo
-            	{
 
-					if(controller_loadFromText("data.csv",listaPlayers) == 0)
-					{
 
-						flagTxt = 1;     //si se carga el archivo de texto, la bandera cambia
 
-					}
+					controller_loadFromText("data.csv",listaPlayers);
 
-            	}
 
                 break;
             case 2:
+
             		controller_addPlayer(listaPlayers);
 
 
             	break;
             case 3:
-
+                    if(!ll_isEmpty(listaPlayers))
+                    {
             		controller_editPlayer(listaPlayers);
+                    }
+                else
+                {
+
+                    printf("La lista esta vacia\n\n");
+                }
 
             	break;
             case 4:
 
-
+                    if(!ll_isEmpty(listaPlayers))
+                    {
             		controller_removePlayer(listaPlayers);
+                    }
+                    else
+                    {
+
+                        printf("La lista esta vacia\n\n");
+                    }
 
 
             	break;
@@ -82,12 +91,27 @@ int main()
             	break;
             case 7:
 
-            	controller_saveAsText("data.csv", listaPlayers);
+                if(!ll_isEmpty(listaPlayers))
+                    {
+                        controller_insertPlayer(listaPlayers);
+                    }
+                    else
+                    {
+
+                        printf("La lista esta vacia.\n\n");
+                    }
 
             	break;
             case 8:
+                    if(!ll_isEmpty(listaPlayers))
+                    {
+                        controller_movePlayer(listaPlayers);
+                    }
+                    else
+                    {
 
-                controller_saveCopy("dataCopia.csv",listaPlayers);
+                        printf("La lista esta vacia.\n\n");
+                    }
 
                 break;
             case 9:
@@ -107,13 +131,23 @@ int main()
 
                 break;
              case 10:
+                 if(!ll_isEmpty(listaPlayers))
+                    {
                     controller_createSubList(listaPlayers);
+                    }
+                    else
+                    {
+
+                        printf("La lista está vacia.\n\n");
+                    }
+
+
                 break;
                case 11:
-            		//controller_findPerName(listaPlayers);
+                        controller_saveAsText("data.csv", listaPlayers);
             	break;
                 case 12:
-            		controller_insertPlayer(listaPlayers);
+                        controller_saveCopy("dataCopia.csv",listaPlayers);
             	break;
             	case 13:
             		printf("Desea salir? 's' para salir, 'n' para quedarse: ");

@@ -26,12 +26,12 @@ int menu()
 	printf("4. Eliminar jugador.\n");
 	printf("5. Listar jugadores\n");
 	printf("6. Ordenar jugadores\n");
-	printf("7. Guardar los datos de los jugadores en el un archivo .csv\n");
-	printf("8. Guardar una copia del archivo, se llamara ''dataCopia.csv''\n");
+	printf("7. Insertar jugador.\n");
+	printf("8. Mover Jugador\n");
 	printf("9. Limpiar lista.\n");
 	printf("10. Crear sublista de nombres\n");
-	printf("11. Buscar nombre especifico.\n");
-	printf("12. Insertar jugador.\n");
+	printf("11. Guardar los datos de los jugadores en un archivo  .csv\n");
+	printf("12. Guardar una copia del archivo, se llamara ''dataCopia.csv''\n");
 	printf("13. Salir\n");
 
 
@@ -54,8 +54,8 @@ int menuModificacion()
 
 	printf("1. Modificar Id\n");
 	printf("2. Modificar nombre.\n");
-	printf("3. Modificar horas trabajadas.\n");
-	printf("4. Modificar sueldo.\n");
+	printf("3. Modificar Nivel.\n");
+	printf("4. Modificar Puntos.\n");
 	printf("5. Salir.\n");
 
 

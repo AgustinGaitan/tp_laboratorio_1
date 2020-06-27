@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1593215309 source:e:\proyectos en eclispe\trabajopracticon4programa\main.c
+1593221123 source:e:\proyectos en eclispe\trabajopracticon4programa\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -9,14 +9,14 @@
 
 1593011357 e:\proyectos en eclispe\trabajopracticon4programa\linkedlist.h
 
-1593214628 e:\proyectos en eclispe\trabajopracticon4programa\controller.h
+1593220795 e:\proyectos en eclispe\trabajopracticon4programa\controller.h
 
 1592036739 e:\proyectos en eclispe\trabajopracticon4programa\employee.h
 	"LinkedList.h"
 
 1592036772 e:\proyectos en eclispe\trabajopracticon4programa\menus.h
 
-1593215296 source:e:\proyectos en eclispe\trabajopracticon4programa\controller.c
+1593220623 source:e:\proyectos en eclispe\trabajopracticon4programa\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -36,7 +36,7 @@
 	"Employee.h"
 	"utn.h"
 
-1593214703 source:e:\proyectos en eclispe\trabajopracticon4programa\menus.c
+1593220889 source:e:\proyectos en eclispe\trabajopracticon4programa\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -64,10 +64,27 @@
 1593196385 e:\proyectos en eclispe\trabajopracticon4programa\players.h
 	"LinkedList.h"
 
-1593196612 source:e:\proyectos en eclispe\trabajopracticon4programa\players.c
+1593218770 source:e:\proyectos en eclispe\trabajopracticon4programa\players.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"players.h"
 	"utn.h"
+
+1593221123 source:e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"players.h"
+	"menus.h"
+
+1593011357 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\linkedlist.h
+
+1593220795 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\controller.h
+
+1593196385 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\players.h
+	"LinkedList.h"
+
+1592036772 e:\proyectos en eclispe\tp_laboratorio_1\trabajopracticon4programa\menus.h
 
