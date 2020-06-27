@@ -80,7 +80,7 @@ int controller_addPlayer(LinkedList* pArrayPlayer)
 
 											ll_add(pArrayPlayer, aux);
 											player_delete(aux);
-                                            //player_delete(auxDos);
+                                            player_delete(auxDos);
 										}
 										else
 										{
