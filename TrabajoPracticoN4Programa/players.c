@@ -113,16 +113,12 @@ int findPlayerById(LinkedList* lista, int id)
 
 		pPlayer = (ePlayer*)ll_get(lista, i);
 
-		if(player_getId(pPlayer, &auxId) == 0)
+		if(!(player_getId(pPlayer, &auxId))  && auxId == id)
 		{
-			if(auxId == id)
-			{
+
 
 				indice = i;
 				break;
-
-			}
-
 
 		}
 
